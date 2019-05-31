@@ -1,0 +1,49 @@
+/*Reset*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+}
+
+.frontpage-quote {
+    color: white;
+    margin: 0 auto;
+    max-width: 80%;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.frontpage-quote-text {
+    font-size: 25px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.frontpage-quote-cite {
+    font-size: 22px;
+}
+
+/*center column*/
+#center-container {
+    color: #fff;
+    font-size: 22px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    font-family: Roboto;
+}
+
+p {
+    font-family: Roboto-Light;
+}
