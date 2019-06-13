@@ -7,6 +7,26 @@ fetch('https://api.spacexdata.com/v3/launches/next')
         apiContainer.appendChild(launchMarkup);
     })
     .catch(err => console.error(error))
+    .then(() => fetch('https://api.spacexdata.com/v3/launches/upcoming'))
+    .then(response => response.json())
+    .then(data => {
+        const nextUpcomingLaunch = data[0];
+        const launchMarkup = createLaunchMarkup(nextUpcomingLaunch, 'Upcoming Mission');
+        apiContainer.appendChild(launchMarkup);
+    })
+    .catch(err => console.error(error))
+    .then(() => fetch('https://api.spacexdata.com/v3/launches/past'))
+    .then(response => response.json())
+    .then(data => {
+        const lastItem = (data.length - 1);
+        const previousLaunch = data[lastItem];
+        const launchMarkup = createLaunchMarkup(previousLaunch, 'Previous Mission');
+        apiContainer.appendChild(launchMarkup);
+    })
+    .catch(err => console.error(error));
+
+
+
 
 function createLaunchMarkup(launch, launchText) {
 
@@ -21,11 +41,10 @@ function createLaunchMarkup(launch, launchText) {
     <ul class="launch-details">
         ${date ? `<li class="launch-detail"><strong>Launch time:</strong> <time datetime="${getDateTime(date)}">${formateDate(date)}</time></li>` : ''}
         ${launch.rocket ? `<li class="launch-detail"><strong>Rocket:</strong> ${launch.rocket.rocket_name}</li>` : ''}
-        ${ launch.launch_site ? `<li class="launch-detail"><strong>Launch site:</strong> ${launch.launch_site.site_name_long}</li>` : ''}
+        ${launch.launch_site ? `<li class="launch-detail"><strong>Launch site:</strong> ${launch.launch_site.site_name_long}</li>` : ''}
     </ul>
     <h3 class="launch-subtitle">Description</h3>
     <p class="launch-description">${launch.details}</p>
-    <a href="launch.html" class="launch-page-button">More Launches</a>
     `;
 
     return launchContainer;
