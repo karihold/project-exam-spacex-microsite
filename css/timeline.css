@@ -2,13 +2,14 @@
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
+    list-style: none;
 }
 
 .timeline::after {
     content: '';
     position: absolute;
     width: 6px;
-    background-color: white;
+    background-color: #D7D7D9;
     top: 0;
     bottom: 0;
     left: 50%;
@@ -16,25 +17,23 @@
 
 .timeline-item {
     padding: 20px;
-    background-color: white;
+    padding-bottom: 20px;
+    background-color: #D7D7D9;
     position: relative;
     border-radius: 6px;
     width: calc(50% - 40px);
+    margin-bottom: 60px;
 }
 
 .timeline-item-title {
-    font-size: 22px;
+    font-size: 21px;
     margin-bottom: 16px;
-}
-
-.timeline-item-subtitle {
-    font-size: 15px;
-    margin-bottom: 15px;
+    text-align: center;
 }
 
 .timeline-item-text {
-    font-size: 15px;
-    line-height: 1.5;
+    font-size: 21px;
+    line-height: 1.7;
 }
 
 /*Circle Base*/
@@ -43,58 +42,116 @@
     position: absolute;
     width: 25px;
     height: 25px;
-    background-color: white;
-    border: 4px solid #EFBA49;
-    top: 15px;
+    background-color: #D7D7D9;
+    border: 4px solid #F8B632;
     border-radius: 50%;
     z-index: 1;
 }
 
-/*Arrow Base*/
-.timeline-item::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    border: medium solid white;
+/* Timelinestyling for desktop */
+@media (min-width: 1321px) {
 
+    /*Arrow Base*/
+    .timeline-item::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        border: medium solid #D7D7D9;
+
+    }
+
+    /*Circle Base*/
+    .timeline-item::after {
+        top: 15px;
+    }
+
+    /*Left Items*/
+    .timeline-item:nth-child(odd) {
+        left: 0;
+    }
+
+    /*Arrow Left Items*/
+    .timeline-item:nth-child(odd)::before {
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent #D7D7D9;
+        right: -10px;
+    }
+
+    /*Circle Left Items*/
+    .timeline-item:nth-child(odd)::after {
+        /* 25px(Circle Width) + 4px(Circle border) / 2 + 40px (Margin) + 6px (Timeline width)*/
+        right: -59.5px;
+    }
+
+    /*Right Items*/
+    .timeline-item:nth-child(even) {
+        /*50% + timeline margin(40px) + timeline width(6px)*/
+        left: calc(50% + 46px);
+    }
+
+    /*Arrow Right Items*/
+    .timeline-item:nth-child(even)::before {
+        left: -10px;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #D7D7D9 transparent transparent;
+    }
+
+    /*Circle Right Items*/
+    .timeline-item:nth-child(even)::after {
+        /* 25px(Circle Width) + 4px(Circle border) / 2 + 40px (Margin) + 6px (Timeline width)*/
+        left: -60.5px;
+    }
 }
 
-/*Left Items*/
-.timeline-item:nth-child(odd) {
-    left: 0;
+@media (max-width: 1320px) {
+    .timeline-item {
+        width: 100%;
+        z-index: 1;
+        margin-bottom: 80px;
+    }
+
+    /*Circle Left Items*/
+    .timeline-item::after {
+        bottom: calc((-29px / 2) - 40px);
+        left: calc(50% - (29px / 2));
+
+        z-index: 1;
+    }
+
+    .timeline-item:last-of-type::after {
+        content: none;
+    }
 }
 
-/*Arrow Left Items*/
-.timeline-item:nth-child(odd)::before {
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent white;
-    right: -10px;
+@media (max-width: 1024px) {
+    .timeline-item {
+        width: 60%;
+        margin: 0 auto 80px;
+    }
 }
 
-/*Circle Left Items*/
-.timeline-item:nth-child(odd)::after {
-    /* 25px(Circle Width) + 4px(Circle border) / 2 + 40px (Margin) + 6px (Timeline width)*/
-    right: -59.5px;
+@media (max-width: 600px) {
+    .timeline-item {
+        width: 80%;
+    }
 }
 
-/*Right Items*/
-.timeline-item:nth-child(even) {
-    /*50% + timeline margin(40px) + timeline width(6px)*/
-    left: calc(50% + 46px);
+@media (max-width: 460px) {
+    .timeline-item-title {
+        font-size: 20px;
+    }
+
+    .timeline-item-text {
+        font-size: 16px;
+        line-height: 1.5;
+    }
 }
 
-/*Arrow Right Items*/
-.timeline-item:nth-child(even)::before {
-    left: -10px;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-}
-
-/*Circle Right Items*/
-.timeline-item:nth-child(even)::after {
-    /* 25px(Circle Width) + 4px(Circle border) / 2 + 40px (Margin) + 6px (Timeline width)*/
-    left: -60.5px;
+@media (max-width: 420px) {
+    .timeline-item {
+        width: 100%;
+    }
 }

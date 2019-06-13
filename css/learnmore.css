@@ -1,0 +1,41 @@
+.learn-more-group {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.learn-more-img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.learn-more-link {
+    color: white;
+    background-color: #F8B632;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    transition: 0.2s;
+    font-size: 24px;
+
+
+    display: block;
+    width: 100px;
+    height: 44px;
+    margin: 0 auto;
+    text-align: center;
+
+    transition: 0.2s ease-in-out;
+}
+
+.learn-more-link:hover {
+    background-color: #FFF;
+    color: #F8B632;
+}
+
+@media (max-width: 460px) {
+    .learn-more-img {
+        width: 100%;
+    }
+}

@@ -1,0 +1,25 @@
+.frontpage-quote {
+    color: #D7D7D9;
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 40px;
+    background-color: #313640;
+    text-align: left;
+    padding: 30px 150px 30px;
+}
+
+.frontpage-quote-text {
+    font-size: 23px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.frontpage-quote-cite {
+    font-size: 22px;
+}
+
+@media (max-width: 580px) {
+    .frontpage-quote {
+        padding: 30px 15px;
+    }
+}

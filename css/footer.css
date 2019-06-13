@@ -1,13 +1,13 @@
 /*Footer*/
 
 footer {
-    padding: 60px 30px;
+    padding: 5px 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    flex-flow: row nowrap;
-    color: #fff;
-    font-size: 10px;
+    flex-flow: row wrap;
+    color: #D7D7D9;
+    background-color: #313640;
 }
 
 .footer-links {
@@ -15,28 +15,97 @@ footer {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    width: 90%;
+    width: 30%;
 }
 
 .footer-links a {
-    font-size: 30px;
-    color: #fff;
+    font-size: 21px;
+    color: #D7D7D9;
     text-decoration: none;
 
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    text-decoration-color: #F8B632;
+}
+
+.company-links {
+    width: 20%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+}
+
+
+#spacex,
+#twitter,
+#flickr {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#twitter {
+    margin-right: 20px;
+    background-image: url('../icons/twitter-icon.svg');
+}
+
+#flickr {
+    margin-right: 20px;
+    background-image: url('../icons/flickr-icon.svg');
+}
+
+#spacex {
+    width: 100px;
+    height: 17px;
+    background-image: url('../images/spacex_logo_white.png');
+}
+
+@media (max-width: 1560px) {
+    .company-links {
+        width: 30%;
+    }
+}
+
+@media (max-width: 890px) {
+
+    .footer-links,
+    .company-links {
+        width: 45%;
+
+    }
 }
 
 @media (max-width: 600px) {
     .footer-links {
         width: 100%;
+        margin-bottom: 40px;
     }
 
     .footer-links a {
         font-size: 22px;
     }
 
-}
+    .company-links {
+        width: 100%;
+        justify-content: space-between;
+    }
 
-.footer-links a:hover {
-    text-decoration: underline;
-    text-decoration-color: #EFBA49;
+    .company-links>li:nth-child(1) {
+        order: 1;
+    }
+
+    .company-links>li:nth-child(2) {
+        order: 3;
+    }
+
+    .company-links>li:nth-child(3) {
+        order: 2;
+    }
+
 }
