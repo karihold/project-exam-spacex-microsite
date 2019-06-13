@@ -6,90 +6,81 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Learn about SpaceXs mission to mars.">
-    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./styles.css">
     <title>Mission to mars</title>
 </head>
 
 <body>
-    <header class="header-no-bottom-margin">
-        <div class="nav-wrapper">
-            <a href="./index.html" id="logo-link-wrapper">
-                <img src="./icons/logo.svg" alt="" id=logo />
-            </a>
-            <nav>
-                <ul>
-                    <li class="nav-item">
-                        <a href="./index.html" class="nav-active">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="./launch.html">Launch</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="./transportation.html">Transportation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="./lifeonmars.html"> Life on Mars</a>
-                    <li class="nav-item">
-                        <a href="./contact.html"> Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="hero-image">
-            <div class="hero-text">
-                <h1>Mission to mars</h1>
-            </div>
-        </div>
-        <div>
+    <header>
+        <a href="./index.html" id="logo-link-wrapper">
+            <img src="./icons/logo.svg" alt="Mars Mission Logo" id=logo />
+        </a>
+        <button id="menu-button">
+            <span id="menu-bar-1"></span>
+            <span id="menu-bar-2"></span>
+            <span id="menu-bar-3"></span>
+        </button>
+
+        <nav>
+            <ul>
+                <li class="nav-item">
+                    <a class="nav-item-link" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item-link" href="./launch.html">Launch</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item-link" href="./transportation.html">Transportation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item-link" href="./lifeonmars.html"> Life on Mars</a>
+                <li class="nav-item">
+                    <a class="nav-item-link active" href="./contact.html"> Contact</a>
+                </li>
+            </ul>
+        </nav>
     </header>
     </div>
     <main>
-        <div class="container">
-            <form action="action_page.php">
-                <div class="row">
-                    <div class="col-25">
-                        <label for="fname">First Name</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="lname">Last Name</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="country">Country</label>
-                    </div>
-                    <div class="col-75">
-                        <select id="country" name="country">
-                            <option value="australia">Australia</option>
-                            <option value="canada">Canada</option>
-                            <option value="usa">USA</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="subject">Subject</label>
-                    </div>
-                    <div class="col-75">
-                        <textarea id="subject" name="subject" placeholder="Write something.."
-                            style="height:200px"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <input type="submit" value="Submit">
-                </div>
-            </form>
+
+        <div class="hero-image">
+            <section class="hero-text">
+                <h1 class="hero-h1">Mission to mars</h1>
+                <p class="hero-p">Making life multiplanetary</p>
+                <button id="newsletter-button" class="hero-button">Join Our Newsletter</button>
+            </section>
         </div>
+
+        <form id="contact-form" class="form">
+            <div class="form-inputs-container">
+                <label class="form-label">Full Name <span class="validation-message"></span>
+                    <input type="text" id="name" name="fullName" placeholder="Your name" class="form-input">
+                </label>
+                <label class="form-label">Email <span class="validation-message"></span>
+                    <input type="email" id="email" name="email" placeholder="Your email" class="form-input">
+                </label>
+                <label class="form-label">Phone <span class="validation-message"></span>
+                    <input type="phone" id="phone" name="phone" placeholder="Your phone" class="form-input">
+                </label>
+                <label class="form-label">Country <span class="validation-message"></span>
+                    <select id="country" name="country" class="form-select">
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                    </select>
+                </label>
+                <label class="form-label">Subject <span class="validation-message"></span>
+                    <textarea class="form-textarea" id="subject" name="subject" placeholder="Your Subject"
+                        style="height:200px"></textarea>
+                </label>
+            </div>
+            <div class="form-buttons-container">
+                <input type="submit" value="Submit" class="form-submit-button">
+            </div>
+        </form>
+
     </main>
-    <footer>
+    <footer class="footer">
         <ul class="footer-links">
             <li>
                 <a href="#"> Contact Us</a>
@@ -103,13 +94,16 @@
                 <a href="#">Privacy</a>
             </li>
         </ul>
-        <div class="social-media-wrapper">
-            <a href="#" id="facebook"></a>
-            <a href="#" id="twitter"></a>
-            <a href="#" id="email"></a>
-            <a href="#" id="instagram"></a>
-        </div>
+        <ul class="company-links">
+
+        </ul>
     </footer>
+
+    <script src="./js/common.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/newsletter.js"></script>
+    <script src="./js/contact.js"></script>
+
 </body>
 
 </html>
