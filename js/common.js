@@ -11,7 +11,7 @@ function createCompanyInfoMarkup(links) {
     const companyInfoContainer = document.querySelector('.company-links');
 
     companyInfoContainer.innerHTML = `
-    <li>
+    <li id="twitter-li">
         <a id="twitter" href=${links.twitter}></a>
     </li>
     <li>

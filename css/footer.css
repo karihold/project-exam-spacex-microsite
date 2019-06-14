@@ -50,6 +50,10 @@ footer {
     background-repeat: no-repeat;
 }
 
+#twitter-li {
+    margin-top: 3px;
+}
+
 #twitter {
     margin-right: 20px;
     background-image: url('../icons/twitter-icon.svg');
