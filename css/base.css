@@ -36,7 +36,9 @@ h6,
 a,
 strong,
 blockquote,
-cite {
+cite,
+button,
+input[type="submit"] {
     font-family: Teko;
 }
 
