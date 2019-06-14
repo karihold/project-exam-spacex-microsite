@@ -11,14 +11,14 @@
 }
 
 .learn-more-link {
-    color: white;
+    color: #232426;
     background-color: #F8B632;
     text-decoration: none;
     padding: 5px 10px;
     border-radius: 10px;
     transition: 0.2s;
     font-size: 24px;
-
+    border: 2px solid transparent;
 
     display: block;
     width: 100px;
@@ -31,7 +31,7 @@
 
 .learn-more-link:hover {
     background-color: #FFF;
-    color: #F8B632;
+    border: 2px solid #F8B632;
 }
 
 @media (max-width: 460px) {

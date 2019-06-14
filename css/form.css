@@ -100,8 +100,9 @@
 
 .form-submit-button {
     background-color: #F8B632;
-    color: white;
-    padding: 15px 25px;
+    color: #232426;
+    padding: 5px 10px;
+    font-size: 24px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -112,18 +113,18 @@
 
 .form-submit-button:hover {
     opacity: 0.8;
-    background-color: white;
+    background-color: #FFF;
     border: 2px solid #F8B632;
-    color: #F8B632;
 }
 
 .form-cancel-button {
     border: none;
     background: none;
-    color: hsl(240, 3%, 24%);
+    color: #232426;
     cursor: pointer;
     font-weight: bold;
     margin-left: 20px;
+    font-size: 20px;
 }
 
 .form-cancel-button:hover {
